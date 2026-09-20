@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ligne 184 — Sous-Préf. - Roseraie</title>
+  <style>
+    :root {
+      --vert: #89c922;
+      --numero: #050505;
+      --orange: #e45d22;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #171b1b;
+      font-family: "Arial Narrow", "Roboto Condensed", Arial, sans-serif;
+    }
+
+    .girouette {
+      position: relative;
+      width: min(96vw, 920px);
+      min-height: 145px;
+      padding: 22px 35px;
+      display: flex;
+      align-items: center;
+      gap: clamp(42px, 7vw, 78px);
+      overflow: hidden;
+      background: #090e0d;
+      border: 4px solid #202a29;
+      border-radius: 7px;
+      box-shadow: inset 0 0 25px #000, 0 10px 30px rgba(0,0,0,.45);
+    }
+
+    /* Fine trame rappelant les points lumineux d'une girouette LED. */
+    .girouette::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .15;
+      background-image: radial-gradient(circle, #fff 0 .7px, transparent .9px);
+      background-size: 4px 4px;
+      mix-blend-mode: overlay;
+    }
+
+    .bloc-numero {
+      position: relative;
+      isolation: isolate;
+      flex: 0 0 auto;
+      width: 126px;
+      height: 92px;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Triangle vert demandé, placé derrière le numéro comme sur la photo. */
+    .triangle {
+      position: absolute;
+      inset: 0 auto auto 0;
+      z-index: -1;
+      width: 98px;
+      height: 90px;
+      background: var(--vert);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+      filter: drop-shadow(0 0 5px rgba(137,201,34,.42));
+    }
+
+    .numero {
+      color: var(--numero);
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -8px;
+      transform: scaleX(.78);
+      text-shadow:
+        -2px -2px 0 #fff,
+         2px -2px 0 #fff,
+        -2px  2px 0 #fff,
+         2px  2px 0 #fff,
+         0 0 4px rgba(255,255,255,.65);
+    }
+
+    .terminus {
+      min-width: 0;
+      color: var(--orange);
+      font-size: clamp(37px, 5.6vw, 60px);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -2px;
+      white-space: nowrap;
+      text-shadow: 0 0 4px rgba(228,93,34,.75);
+    }
+
+    @media (max-width: 650px) {
+      .girouette {
+        min-height: 105px;
+        padding: 15px 18px;
+        gap: 20px;
+      }
+
+      .bloc-numero {
+        width: 88px;
+        height: 68px;
+      }
+
+      .triangle {
+        width: 70px;
+        height: 66px;
+      }
+
+      .numero {
+        font-size: 52px;
+        letter-spacing: -6px;
+      }
+
+      .terminus {
+        font-size: clamp(21px, 5.7vw, 34px);
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="girouette" role="img" aria-label="Ligne 184, terminus Sous-Préfecture - Roseraie">
+    <span class="bloc-numero" aria-hidden="true">
+      <span class="triangle"></span>
+      <span class="numero">184</span>
+    </span>
+    <span class="terminus">Sous-Préf. - Roseraie</span>
+  </div>
+</body>
+</html>
